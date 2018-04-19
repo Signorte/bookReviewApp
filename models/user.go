@@ -17,16 +17,21 @@ func init() {
 }
 
 // User is
+
 type User struct {
-	ID       int    `json:"id" xorm:"'id'"`
-	Username string `json:"name" xorm:"'nickname'"`
+	ID       int    `xorm:"'id'"`
+	Username string `xorm:"'nickname'"`
+	Bookname string `xorm:"'bookname'"`
+	Review   string `xorm:"'review'"`
 }
 
 // NewUser ...
-func NewUser(id int, username string) User {
+func NewUser(id int, username string, bookname string, review string) User {
 	return User{
 		ID:       id,
 		Username: username,
+		Bookname: bookname,
+		Review:   review,
 	}
 }
 

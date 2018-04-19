@@ -2,8 +2,6 @@ package controllers
 
 import (
 	"github.com/Signorte/bookReviewApp/models"
-	"github.com/go-xorm/xorm"
-	"github.com/Signorte/bookReviewApp/params"
 )
 
 // User is
@@ -19,7 +17,12 @@ func NewUser() User {
 func (c User) Get(n int) interface{} {
 	repo := models.NewUserRepository()
 	user := repo.GetByID(n)
-	user_json = params.User(id: user.id, nickname: user.nickname)
+	//user_json := params.User{
+	//ID:       user.ID,
+	//Username: user.Username,
+	//Bookname: user.Bookname,
+	//Review:   user.Review,
+	//}
 	//return user
-	return user_json
+	return user
 }
