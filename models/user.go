@@ -10,7 +10,7 @@ var engine *xorm.Engine
 // init ...
 func init() {
 	var err error
-	engine, err = xorm.NewEngine("mysql", "fuga:pass@/bookshelf")
+	engine, err = xorm.NewEngine("mysql", "root:1234@tcp(127.0.0.1:3306)/bookshelf")
 	if err != nil {
 		panic(err)
 	}
@@ -31,7 +31,7 @@ func NewUser(id int, username string) User {
 }
 
 // UserRepository is
-type UserRepoository struct {
+type UserRepository struct {
 }
 
 // NewUserRepository ...
